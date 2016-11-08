@@ -1,0 +1,333 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{24846E69-0E96-4E98-A3AF-947ED2836606}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SSISSFTPTask110</RootNamespace>
+    <AssemblyName>SSISSFTPTask110</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>SSISSFTPTask.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG</DefineConstants>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.DataTransformationServices.Controls, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>C:\Windows\Microsoft.NET\assembly\GAC_MSIL\Microsoft.DataTransformationServices.Controls\v4.0_11.0.0.0__89845dcd8080cc91\Microsoft.DataTransformationServices.Controls.DLL</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.Dts.Design, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>C:\Windows\Microsoft.NET\assembly\GAC_MSIL\Microsoft.SqlServer.Dts.Design\v4.0_11.0.0.0__89845dcd8080cc91\Microsoft.SqlServer.Dts.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.DTSRuntimeWrap, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=x86">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.ManagedDTS, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>C:\Windows\Microsoft.NET\assembly\GAC_MSIL\Microsoft.SqlServer.ManagedDTS\v4.0_11.0.0.0__89845dcd8080cc91\Microsoft.SqlServer.ManagedDTS.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.XML" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="frmEditProperties.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmEditProperties.Designer.cs">
+      <DependentUpon>frmEditProperties.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SFTPManager.cs" />
+    <Compile Include="SharpSSH\BigInteger.cs" />
+    <Compile Include="SSISSFTTask.cs" />
+    <Compile Include="DilffieHellman\DHKeyGeneration.cs" />
+    <Compile Include="DilffieHellman\DHParameters.cs" />
+    <Compile Include="DilffieHellman\DiffieHellman.cs" />
+    <Compile Include="DilffieHellman\DiffieHellmanManaged.cs" />
+    <Compile Include="DilffieHellman\mono\BigInteger.cs" />
+    <Compile Include="DilffieHellman\mono\ConfidenceFactor.cs" />
+    <Compile Include="DilffieHellman\mono\MiniParser.cs" />
+    <Compile Include="DilffieHellman\mono\NextPrimeFinder.cs" />
+    <Compile Include="DilffieHellman\mono\PrimalityTests.cs" />
+    <Compile Include="DilffieHellman\mono\PrimeGeneratorBase.cs" />
+    <Compile Include="DilffieHellman\mono\SecurityParser.cs" />
+    <Compile Include="DilffieHellman\mono\SequentialSearchPrimeGeneratorBase.cs" />
+    <Compile Include="Keys.cs" />
+    <Compile Include="Org.Mentalis.Security\Authentication\AlphaValidator.cs" />
+    <Compile Include="Org.Mentalis.Security\Authentication\AuthenticationStructures.cs" />
+    <Compile Include="Org.Mentalis.Security\Authentication\CharacterValidator.cs" />
+    <Compile Include="Org.Mentalis.Security\Authentication\CharEnumerator.cs" />
+    <Compile Include="Org.Mentalis.Security\Authentication\Credential.cs" />
+    <Compile Include="Org.Mentalis.Security\Authentication\CredentialCollection.cs" />
+    <Compile Include="Org.Mentalis.Security\Authentication\CredentialException.cs" />
+    <Compile Include="Org.Mentalis.Security\Authentication\IValidator.cs" />
+    <Compile Include="Org.Mentalis.Security\Authentication\LengthValidator.cs" />
+    <Compile Include="Org.Mentalis.Security\Authentication\NumericValidator.cs" />
+    <Compile Include="Org.Mentalis.Security\Authentication\PasswordValidator.cs" />
+    <Compile Include="Org.Mentalis.Security\Authentication\SymbolValidator.cs" />
+    <Compile Include="Org.Mentalis.Security\Cryptography\ARCFourManaged.cs" />
+    <Compile Include="Org.Mentalis.Security\Cryptography\ARCFourManagedTransform.cs" />
+    <Compile Include="Org.Mentalis.Security\Cryptography\CryptoHandle.cs" />
+    <Compile Include="Org.Mentalis.Security\Cryptography\HMAC.cs" />
+    <Compile Include="Org.Mentalis.Security\Cryptography\MD2.cs" />
+    <Compile Include="Org.Mentalis.Security\Cryptography\MD2CryptoServiceProvider.cs" />
+    <Compile Include="Org.Mentalis.Security\Cryptography\MD4.cs" />
+    <Compile Include="Org.Mentalis.Security\Cryptography\MD4CryptoServiceProvider.cs" />
+    <Compile Include="Org.Mentalis.Security\Cryptography\RC4.cs" />
+    <Compile Include="Org.Mentalis.Security\Cryptography\RC4CryptoServiceProvider.cs" />
+    <Compile Include="Org.Mentalis.Security\Cryptography\RC4UnmanagedTransform.cs" />
+    <Compile Include="Org.Mentalis.Security\Cryptography\RijndaelCryptoServiceProvider.cs" />
+    <Compile Include="Org.Mentalis.Security\Cryptography\RijndaelUnmanagedTransform.cs" />
+    <Compile Include="Org.Mentalis.Security\Cryptography\StringEncryption.cs" />
+    <Compile Include="Org.Mentalis.Security\Cryptography\SymmetricKey.cs" />
+    <Compile Include="Org.Mentalis.Security\NativeMethods.cs" />
+    <Compile Include="Org.Mentalis.Security\Permissions\PermissionStructures.cs" />
+    <Compile Include="Org.Mentalis.Security\Permissions\SmartcardPermission.cs" />
+    <Compile Include="Org.Mentalis.Security\Permissions\SmartcardPermissionAttribute.cs" />
+    <Compile Include="Org.Mentalis.Security\Platform.cs" />
+    <Compile Include="Org.Mentalis.Security\Resources\ResourceController.cs" />
+    <Compile Include="Org.Mentalis.Security\Resources\SecurityServicesMessages.Designer.cs" />
+    <Compile Include="Org.Mentalis.Security\Smartcard\ApduCommand.cs" />
+    <Compile Include="Org.Mentalis.Security\Smartcard\ApduReply.cs" />
+    <Compile Include="Org.Mentalis.Security\Smartcard\Atr.cs" />
+    <Compile Include="Org.Mentalis.Security\Smartcard\SmartcardException.cs" />
+    <Compile Include="Org.Mentalis.Security\Smartcard\SmartcardReader.cs" />
+    <Compile Include="Org.Mentalis.Security\Smartcard\SmartcardStructures.cs" />
+    <Compile Include="Org.Mentalis.Security\Smartcard\UI\InputPinForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Org.Mentalis.Security\Smartcard\UI\SelectReaderForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Org.Mentalis.Security\Smartcard\VendorAttributes.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SharpSSH\ITransferProtocol.cs" />
+    <Compile Include="SharpSSH\java\Exception.cs" />
+    <Compile Include="SharpSSH\java\io\File.cs" />
+    <Compile Include="SharpSSH\java\io\FileInputStream.cs" />
+    <Compile Include="SharpSSH\java\io\FileOutputStream.cs" />
+    <Compile Include="SharpSSH\java\io\InputStream.cs" />
+    <Compile Include="SharpSSH\java\io\InputStreamWrapper.cs" />
+    <Compile Include="SharpSSH\java\io\JStream.cs" />
+    <Compile Include="SharpSSH\java\io\OutputStream.cs" />
+    <Compile Include="SharpSSH\java\lang\Class.cs" />
+    <Compile Include="SharpSSH\java\lang\Integer.cs" />
+    <Compile Include="SharpSSH\java\lang\Runnable.cs" />
+    <Compile Include="SharpSSH\java\lang\StringBuffer.cs" />
+    <Compile Include="SharpSSH\java\lang\Thread.cs" />
+    <Compile Include="SharpSSH\java\net\InetAddress.cs" />
+    <Compile Include="SharpSSH\java\net\ServerSocket.cs" />
+    <Compile Include="SharpSSH\java\net\Socket.cs" />
+    <Compile Include="SharpSSH\java\Platform.cs" />
+    <Compile Include="SharpSSH\java\RuntimeException.cs" />
+    <Compile Include="SharpSSH\java\String.cs" />
+    <Compile Include="SharpSSH\java\System.cs" />
+    <Compile Include="SharpSSH\java\util\Arrays.cs" />
+    <Compile Include="SharpSSH\java\util\Enumeration.cs" />
+    <Compile Include="SharpSSH\java\util\Hashtable.cs" />
+    <Compile Include="SharpSSH\java\util\JavaString.cs" />
+    <Compile Include="SharpSSH\java\util\Vector.cs" />
+    <Compile Include="SharpSSH\jsch\Buffer.cs" />
+    <Compile Include="SharpSSH\jsch\Channel.cs" />
+    <Compile Include="SharpSSH\jsch\Channel.old.cs" />
+    <Compile Include="SharpSSH\jsch\ChannelDirectTCPIP.cs" />
+    <Compile Include="SharpSSH\jsch\ChannelExec.cs" />
+    <Compile Include="SharpSSH\jsch\ChannelForwardedTCPIP.cs" />
+    <Compile Include="SharpSSH\jsch\ChannelSession.cs" />
+    <Compile Include="SharpSSH\jsch\ChannelSftp.cs" />
+    <Compile Include="SharpSSH\jsch\ChannelSftpStreamGet.cs" />
+    <Compile Include="SharpSSH\jsch\ChannelSftpStreamPut.cs" />
+    <Compile Include="SharpSSH\jsch\ChannelShell.cs" />
+    <Compile Include="SharpSSH\jsch\ChannelSubsystem.cs" />
+    <Compile Include="SharpSSH\jsch\ChannelX11.cs" />
+    <Compile Include="SharpSSH\jsch\Cipher.cs" />
+    <Compile Include="SharpSSH\jsch\Compression.cs" />
+    <Compile Include="SharpSSH\jsch\DH.cs" />
+    <Compile Include="SharpSSH\jsch\DHG1.cs" />
+    <Compile Include="SharpSSH\jsch\DHGEX.cs" />
+    <Compile Include="SharpSSH\jsch\ForwardedTCPIPDaemon.cs" />
+    <Compile Include="SharpSSH\jsch\HASH.cs" />
+    <Compile Include="SharpSSH\jsch\HostKey.cs" />
+    <Compile Include="SharpSSH\jsch\HostKeyRepository.cs" />
+    <Compile Include="SharpSSH\jsch\Identity.cs" />
+    <Compile Include="SharpSSH\jsch\IdentityFile.cs" />
+    <Compile Include="SharpSSH\jsch\IO.cs" />
+    <Compile Include="SharpSSH\jsch\jce\AES128CBC.cs" />
+    <Compile Include="SharpSSH\jsch\jce\BlowfishCBC.cs" />
+    <Compile Include="SharpSSH\jsch\jce\DH.cs" />
+    <Compile Include="SharpSSH\jsch\jce\HMACMD5.cs" />
+    <Compile Include="SharpSSH\jsch\jce\HMACMD596.cs" />
+    <Compile Include="SharpSSH\jsch\jce\HMACSHA1.cs" />
+    <Compile Include="SharpSSH\jsch\jce\HMACSHA196.cs" />
+    <Compile Include="SharpSSH\jsch\jce\KeyPairGenDSA.cs" />
+    <Compile Include="SharpSSH\jsch\jce\KeyPairGenRSA.cs" />
+    <Compile Include="SharpSSH\jsch\jce\MD5.cs" />
+    <Compile Include="SharpSSH\jsch\jce\Random.cs" />
+    <Compile Include="SharpSSH\jsch\jce\SHA1.cs" />
+    <Compile Include="SharpSSH\jsch\jce\SignatureDSA.cs" />
+    <Compile Include="SharpSSH\jsch\jce\SignatureRSA.cs" />
+    <Compile Include="SharpSSH\jsch\jce\TripleDESCBC.cs" />
+    <Compile Include="SharpSSH\jsch\JSch.cs" />
+    <Compile Include="SharpSSH\jsch\JSchAuthCancelException.cs" />
+    <Compile Include="SharpSSH\jsch\JSchException.cs" />
+    <Compile Include="SharpSSH\jsch\JSchPartialAuthException.cs" />
+    <Compile Include="SharpSSH\jsch\KeyExchange.cs" />
+    <Compile Include="SharpSSH\jsch\KeyPair.cs" />
+    <Compile Include="SharpSSH\jsch\KeyPairDSA.cs" />
+    <Compile Include="SharpSSH\jsch\KeyPairGenDSA.cs" />
+    <Compile Include="SharpSSH\jsch\KeyPairGenRSA.cs" />
+    <Compile Include="SharpSSH\jsch\KeyPairRSA.cs" />
+    <Compile Include="SharpSSH\jsch\KnownHosts.cs" />
+    <Compile Include="SharpSSH\jsch\MAC.cs" />
+    <Compile Include="SharpSSH\jsch\Packet.cs" />
+    <Compile Include="SharpSSH\jsch\PortWatcher.cs" />
+    <Compile Include="SharpSSH\jsch\Proxy.cs" />
+    <Compile Include="SharpSSH\jsch\ProxyHTTP.cs" />
+    <Compile Include="SharpSSH\jsch\Random.cs" />
+    <Compile Include="SharpSSH\jsch\Request.cs" />
+    <Compile Include="SharpSSH\jsch\RequestExec.cs" />
+    <Compile Include="SharpSSH\jsch\RequestPtyReq.cs" />
+    <Compile Include="SharpSSH\jsch\RequestSftp.cs" />
+    <Compile Include="SharpSSH\jsch\RequestShell.cs" />
+    <Compile Include="SharpSSH\jsch\RequestSignal.cs" />
+    <Compile Include="SharpSSH\jsch\RequestSubsystem.cs" />
+    <Compile Include="SharpSSH\jsch\RequestWindowChange.cs" />
+    <Compile Include="SharpSSH\jsch\RequestX11.cs" />
+    <Compile Include="SharpSSH\jsch\ServerSocketFactory.cs" />
+    <Compile Include="SharpSSH\jsch\Session.cs" />
+    <Compile Include="SharpSSH\jsch\SftpATTRS.cs" />
+    <Compile Include="SharpSSH\jsch\SftpException.cs" />
+    <Compile Include="SharpSSH\jsch\SftpProgressMonitor.cs" />
+    <Compile Include="SharpSSH\jsch\SignatureDSA.cs" />
+    <Compile Include="SharpSSH\jsch\SignatureRSA.cs" />
+    <Compile Include="SharpSSH\jsch\SocketFactory.cs" />
+    <Compile Include="SharpSSH\jsch\UIKeyboardInteractive.cs" />
+    <Compile Include="SharpSSH\jsch\UserAuth.cs" />
+    <Compile Include="SharpSSH\jsch\UserAuthKeyboardInteractive.cs" />
+    <Compile Include="SharpSSH\jsch\UserAuthNone.cs" />
+    <Compile Include="SharpSSH\jsch\UserAuthPassword.cs" />
+    <Compile Include="SharpSSH\jsch\UserAuthPublicKey.cs" />
+    <Compile Include="SharpSSH\jsch\UserInfo.cs" />
+    <Compile Include="SharpSSH\jsch\Util.cs" />
+    <Compile Include="SharpSSH\Scp.cs" />
+    <Compile Include="SharpSSH\Scp.old.cs" />
+    <Compile Include="SharpSSH\SecureShell.cs" />
+    <Compile Include="SharpSSH\Sftp.cs" />
+    <Compile Include="SharpSSH\SshBase.cs" />
+    <Compile Include="SharpSSH\SshExe.cs" />
+    <Compile Include="SharpSSH\SshHelper.cs" />
+    <Compile Include="SharpSSH\SshShell.cs" />
+    <Compile Include="SharpSSH\SshStream.cs" />
+    <Compile Include="SharpSSH\SshTransferException.cs" />
+    <Compile Include="SharpSSH\SshTransferProtocolBase.cs" />
+    <Compile Include="SharpSSH\Streams\CombinedStream.cs" />
+    <Compile Include="SharpSSH\Streams\InputStream.cs" />
+    <Compile Include="SharpSSH\Streams\OutputStream.cs" />
+    <Compile Include="SharpSSH\Streams\PipedInputStream.cs" />
+    <Compile Include="SharpSSH\Streams\PipedOutputStream.cs" />
+    <Compile Include="SharpSSH\Streams\PipedStream.cs" />
+    <Compile Include="SharpSSH\Streams\ProtectedConsoleStream.cs" />
+    <Compile Include="SSISSFTTaskUIInterface.cs" />
+    <Compile Include="Tools\Tools.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="sftp.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Org.Mentalis.Security\Authentication\vssver2.scc" />
+    <None Include="Org.Mentalis.Security\Cryptography\vssver2.scc" />
+    <None Include="Org.Mentalis.Security\Resources\vssver2.scc" />
+    <None Include="Org.Mentalis.Security\Smartcard\UI\vssver2.scc" />
+    <None Include="Org.Mentalis.Security\Smartcard\vssver2.scc" />
+    <None Include="SSISSFTPTask.snk" />
+    <None Include="SSISSFTTask.snk" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="frmEditProperties.resx">
+      <DependentUpon>frmEditProperties.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Org.Mentalis.Security\Resources\SecurityServicesMessages.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Org.Mentalis.Security\Smartcard\UI\InputPinForm.resx">
+      <DependentUpon>InputPinForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Org.Mentalis.Security\Smartcard\UI\SelectReaderForm.resx">
+      <DependentUpon>SelectReaderForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>"C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\NETFX 4.0 Tools\gacutil.exe" /uf $(TargetName)
+del "C:\Program Files (x86)\Microsoft SQL Server\110\DTS\Tasks\$(TargetName).dll"
+del "C:\Program Files\Microsoft SQL Server\110\DTS\Tasks\$(TargetName).dll"
+copy "$(TargetPath)" "C:\Program Files (x86)\Microsoft SQL Server\110\DTS\Tasks\"
+REM copy "$(TargetPath)" "C:\Program Files\Microsoft SQL Server\110\DTS\Tasks\"
+"C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\NETFX 4.0 Tools\gacutil.exe" -iF "$(TargetPath)"</PostBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
